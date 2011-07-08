@@ -1,0 +1,52 @@
+{
+    "questions": {
+        "czykompilacja": {
+            "question": "Czy bardzo przeszkadza Ci kompilacja?",
+            "yes": [
+                "answer",
+                "kompilacjabe"
+            ],
+            "no": [
+                "answer",
+                "kompilacjacacy"
+            ]
+        },
+        "czymisiechce": {
+            "question": "Czy chce Ci się marnować czas na uczenie się nowego systemu",
+            "yes": [
+                "question",
+                "czykompilacja"
+            ],
+            "no": [
+                "answer",
+                "nicnieumiem"
+            ]
+        },
+        "czycosumiem": {
+            "question": "Czy miałeś kiedykolwiek do czynienia z Linuksem?",
+            "yes": [
+                "question",
+                "czymisiechce"
+            ],
+            "no": [
+                "answer",
+                "nicnieumiem"
+            ]
+        }
+    },
+    "answers": {
+        "kompilacjacacy": [
+            "Gentoo",
+            "Sabayon"
+        ],
+        "kompilacjabe": [
+            "Debian",
+            "Arch"
+        ],
+        "nicnieumiem": [
+            "Ubuntu",
+            "Mint"
+        ]
+    },
+    "root": "czycosumiem"
+}
