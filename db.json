@@ -1,52 +1,77 @@
 {
-    "questions": {
-        "czykompilacja": {
-            "question": "Czy bardzo przeszkadza Ci kompilacja?",
-            "yes": [
-                "answer",
-                "kompilacjabe"
-            ],
-            "no": [
-                "answer",
-                "kompilacjacacy"
-            ]
-        },
-        "czymisiechce": {
-            "question": "Czy chce Ci się marnować czas na uczenie się nowego systemu",
-            "yes": [
-                "question",
-                "czykompilacja"
-            ],
-            "no": [
-                "answer",
-                "nicnieumiem"
-            ]
-        },
-        "czycosumiem": {
-            "question": "Czy miałeś kiedykolwiek do czynienia z Linuksem?",
-            "yes": [
-                "question",
-                "czymisiechce"
-            ],
-            "no": [
-                "answer",
-                "nicnieumiem"
-            ]
-        }
-    },
-    "answers": {
-        "kompilacjacacy": [
-            "Gentoo",
-            "Sabayon"
-        ],
-        "kompilacjabe": [
-            "Debian",
-            "Arch"
-        ],
-        "nicnieumiem": [
-            "Ubuntu",
-            "Mint"
-        ]
-    },
-    "root": "czycosumiem"
+	"questions": {
+			"pocomilinux":
+		    { "question": "Czy masz zamiar poznać Linuxa, zaprzyjaźnić się z nim i 
+zrozumieć go, czy szkuasz tylko systemu do pracy?",
+			"dopracy": {
+				"question",
+				"minimalist"
+			},
+			"zrozumiec": {
+				"question",
+				"zaawans"
+           		}
+		     },
+		       "minimalist":
+		     { "question": "Czy wolisz minimalizm systemu, lekkość i pełne dostosowanie 
+do użytkownika, czy wolisz może potężne, stabilne śodowisko z bajerami?".
+			"bajerlux": {
+				"answer",
+				"luxmega"
+			},
+			"minimum": {
+				"answer",
+				"minimalizmcacy"
+			}
+		      },
+		       "zaawans"
+		      { "question": "Jaki jest twój stopien zaawansowania?"
+			"linuxg33k": {
+				"question",
+				"kompilacja"
+			},
+			"totalnyidiota": {
+				"answer",
+				"idiot",
+			}
+		       },
+		      { "question": "Czy wolisz pakiety kompilowane (super wydajność, wolna 
+instalacja), czy pakiety binarne (nie tak duża wydajność, szybka instalacja)?:
+			"binarki": {
+				"answer",
+				"binarne"
+			}
+			"compile": {
+				"answer",
+				"compile"
+			}
+		       }
+	}
+	"answers": {
+		"luxmega": {
+			"Kubuntu",
+			"Sabayon"
+		},
+		"minimalizmcacy": {
+			"ArchBang",
+			"CrunchBang",
+			"Debian"
+		},
+		"idiot": {
+			"Ubuntu",
+			"Mint",
+			"Chakra"
+		},
+		"binarne": {
+			"Ubuntu",
+			"Debian",
+			"Fedora",
+			"Arch"
+		}
+		"compile": {
+			"Gentoo",
+			"Sabayon",
+			"BSD"
+		}
+	}
 }
