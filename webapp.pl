@@ -24,7 +24,7 @@ get '/answer/:state/:yesno' => sub {
     my $yesno = $self->param('yesno');
     my $res = $quiz->answer($state, $yesno);
     if (ref $res eq 'ARRAY') {
-        my $ans = join ", ", @$res;
+        my $ans = '[' . join(", ", @$res) . ']';
         $self->stash(answer => $ans);
         $self->render('answer');
     } else {
@@ -58,4 +58,4 @@ __DATA__
 </html>
 
 @@ answer.json.ep
-{ 'answer' : '<%= $answer =%>' }
+{ 'answer' : <%= $answer =%> }
