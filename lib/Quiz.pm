@@ -6,25 +6,29 @@
     use JSON::XS;
     use File::Slurp 'slurp';
 
-    use Moo;
-    has db        => (is => 'ro', default => sub { 'db.json' });
-    # int        -> id pytania
-    has states    => (is => 'ro', default => sub { [] });
-    # id pytania -> obiekt Question
-    has questions => (is => 'ro', default => sub { {} });
-    has answers   => (is => 'ro', default => sub { {} });
+    use Mo;
+    has 'db';
+    has 'states'; # int -> id pytania
+    has 'questions'; # id pytania -> obiekt Question
+    has 'answers';
 
     {
         package Question;
-        use Moo;
-        has state    => ( is => 'ro' );
-        has question => ( is => 'ro' );
-        has yes      => ( is => 'ro' );
-        has no       => ( is => 'ro' );
+        use Mo;
+        has 'state';
+        has 'question';
+        has 'yes';
+        has 'no';
     }
 
     sub BUILD {
         my $self = shift;
+        # defaults
+        $self->db // $self->db('db.json');
+        $self->states([]);
+        $self->questions({});
+        $self->answers({});
+
         my $data = decode_json(slurp($self->db));
         my $stateiter = 1;
 
